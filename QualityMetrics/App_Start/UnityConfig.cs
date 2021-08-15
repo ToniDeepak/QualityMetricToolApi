@@ -14,7 +14,7 @@ namespace QualityMetrics
         {
             var container = new UnityContainer();
 
-            GlobalConfiguration.Configuration.DependencyResolver = new Unity.WebApi.UnityDependencyResolver(container);
+            GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
             container.RegisterType<IExcelService, ExcelService>();
             container.RegisterType<IPeerCodeReviewService, PeerCodeReviewService>();
             container.RegisterType<ITeamFoundationService, TeamFoundationService>();

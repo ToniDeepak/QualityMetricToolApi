@@ -1,11 +1,6 @@
-﻿using ExternalServices.Interfaces;
-using ExternalServices.Implementations;
-using BusinessLayer.Implementations;
-using BusinessLayer.Interfaces;
+﻿
 using System.Web.Http;
-using Unity;
-using System.Web.Mvc;
-using QualityMetrics.Controllers;
+using System.Web.Http.Cors;
 
 namespace QualityMetrics
 {
@@ -24,6 +19,9 @@ namespace QualityMetrics
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            EnableCorsAttribute corsAttribute = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(corsAttribute);
         }
     }
 }

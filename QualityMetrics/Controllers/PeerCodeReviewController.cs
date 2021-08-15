@@ -19,6 +19,6 @@ namespace QualityMetrics.Controllers
         {
             _peerCodeReviewService.GetCodeReviewDetails(getPeerReviewRequest);
             return Ok();
-        }
+         }
     }
 }
